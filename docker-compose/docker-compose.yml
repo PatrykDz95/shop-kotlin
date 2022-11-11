@@ -1,9 +1,13 @@
 version: '3'
 services:
+  mongoDB:
+    image: "bitnami/mongodb:latest"
+    ports:
+      - 27017:27017
   database:
     image: "postgres"
     env_file:
-      - database.env # configure postgres
+      - database.env
     expose:
       - 5432
     ports:

@@ -17,11 +17,11 @@ class ItemSoldEventProducer(
 ) {
     private val log = LoggerFactory.getLogger(javaClass)
 
-    fun sendMessage(items: List<Item>) {
+    fun sendMessage(items: Item) {
         try {
             log.info("Receiving product request")
             log.info("Sending message to Kafka {}", items)
-            val message: Message<List<Item>> = MessageBuilder
+            val message: Message<Item> = MessageBuilder
                 .withPayload(items)
                 .setHeader(KafkaHeaders.TOPIC, topic)
                 .setHeader("X-Custom-Header", "Custom header here")

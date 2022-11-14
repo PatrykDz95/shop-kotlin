@@ -21,6 +21,10 @@ class ItemService(private val itemRepository: ItemRepository) {
         return itemRepository.findAll()
     }
 
+    fun addItems(item: List<Item>) {
+        itemRepository.saveAll(item)
+    }
+
     fun addItem(item: Item): Item {
         itemRepository.save(item)
         databaseComponent.col.insertOne(item)

@@ -12,8 +12,4 @@ data class Customer(
     val lastName: String = "",
     @OneToMany(fetch = FetchType.LAZY, cascade = [CascadeType.MERGE])
     val user: List<Item>? = null
-){
-}
-
-// TODO: "message": "No default constructor for entity:  : com.example.kotlin.model.Customer; nested exception is org.hibernate.InstantiationException: No default constructor for entity:  : com.example.kotlin.model.Customer",
-//"path": "/findall"
+)

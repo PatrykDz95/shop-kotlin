@@ -12,10 +12,10 @@ class ExportItemCsv(private var filenameProvider: FilenameProvider) {
 
     fun export(items: Iterable<Item>): String {
         val fileName = filenameProvider.forCsvImport()
-        val writer = Files.newBufferedWriter(Paths.get(fileName));
+        val writer = Files.newBufferedWriter(Paths.get(fileName))
         val csvPrinter = CSVPrinter(
             writer, CSVFormat.EXCEL
-                .withHeader("id", "name", "boughtDate", "returnDate")
+                .withHeader("id", "name", "boughtDate", "returnDate").withDelimiter(';')
         )
         for (item in items) {
             val itemData = listOf(

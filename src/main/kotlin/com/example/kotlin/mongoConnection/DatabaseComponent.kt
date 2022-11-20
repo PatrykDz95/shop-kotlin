@@ -1,7 +1,6 @@
 package com.example.kotlin.mongoConnection
 
 import com.example.kotlin.model.Item
-import com.example.kotlin.model.Job
 import org.litote.kmongo.KMongo
 import org.litote.kmongo.getCollection
 import org.springframework.stereotype.Component
